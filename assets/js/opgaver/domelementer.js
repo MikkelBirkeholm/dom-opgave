@@ -62,15 +62,35 @@ opret DOM elementer i elementet med id opgaveFour, udfra data objectet myData.
 Du skal vælge element tags der giver mening i forbindelse med HTML5 semantisk tagging.
 */
 
+// din kode her
 const myData = {
     name: 'tiger',
     image: 'assets/img/standard_tiger.jpg',
     description: 'En tiger er et stort, katteagtig rovdyr med orange og sort striber i pelsen og skarpe tænder og kløer.'
 };
 
+const container = document.querySelector('#opgaveFour');
 
-// din kode her
+function renderElements(data) {
+    let myTitle = document.createElement('h2');
+    let myFigure = document.createElement('figure')
+    let myImage = document.createElement('img');
+    let myDescription = document.createElement('figcaption');
 
+    myTitle.innerHTML = data.name;
+    myTitle.style.textTransform = 'Capitalize'
+    myImage.src = data.image;
+    myImage.style.width = '100%'
+    myDescription.innerText = data.description;
+
+    myFigure.appendChild(myImage)
+    myFigure.appendChild(myDescription)
+
+    container.appendChild(myTitle);
+    container.appendChild(myFigure);
+}
+
+renderElements(myData)
 
 
 
